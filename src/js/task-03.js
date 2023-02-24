@@ -13,7 +13,7 @@ const images = [
   },
 ];
 
-const gallery = document.querySelector(".gallery");
+const galleryEl = document.querySelector(".gallery");
 let item = "";
 
 for (let i = 0; i < images.length; i++) {
@@ -25,6 +25,5 @@ for (let i = 0; i < images.length; i++) {
   `;
 }
 
-gallery.insertAdjacentHTML("beforeend", item);
-
-console.log(gallery);
+galleryEl.insertAdjacentHTML("beforeend", item);
+console.log(galleryEl);
