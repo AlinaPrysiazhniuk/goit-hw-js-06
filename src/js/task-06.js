@@ -3,9 +3,10 @@ const inputEl = document.querySelector("#validation-input");
 inputEl.addEventListener("blur", notInputFocus);
 
 function notInputFocus() {
-  console.log("input not in focus");
-  const stringLength = inputEl.value.length;
-  if (stringLength === 6) {
+  const inputValue = inputEl.value.trim();
+  const stringLength = parseInt(inputEl.dataset.length);
+
+  if (inputValue.length === stringLength) {
     inputEl.classList.add("valid");
   } else {
     inputEl.classList.add("invalid");
