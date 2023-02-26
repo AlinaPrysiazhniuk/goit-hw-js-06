@@ -8,6 +8,7 @@ const refs = {
   inputEl: document.querySelector("[data-number]"),
   buttonCreate: document.querySelector("[data-create]"),
   buttonDestroy: document.querySelector("[data-destroy]"),
+  divControl: document.querySelector("#controls"),
 };
 
 //-----------------створення колекції
@@ -23,14 +24,16 @@ function createBoxes(amount) {
   newEl.classList.add("boxes1");
   newEl.style.width = "30px";
   newEl.style.height = "30px";
-  newEl.style.color = "red";
+  newEl.style.color = getRandomHexColor();
   console.log(newEl);
-
+  const colorEl = getRandomHexColor();
+  console.log(colorEl);
+  refs.divControl.insertAdjacentHTML("beforeEnd", newEl);
+  //refs.divControl.append(newEl1);
   //return newEl;
   //newEl.textContent = ingredient;
   //return newItem;
 }
-//refs.divControl.append(newEl);
 
 function getRandomHexColor() {
   return `#${Math.floor(Math.random() * 16777215)

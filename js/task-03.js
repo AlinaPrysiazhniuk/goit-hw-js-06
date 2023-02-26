@@ -13,17 +13,10 @@ const images = [
   },
 ];
 
-const galleryEl = document.querySelector(".js-gallery");
+const galleryEl = document.querySelector(".gallery");
 let item = "";
-
-for (let i = 0; i < images.length; i++) {
-  const image = images[i];
-  item += `
-    <li>
-      <img src="${image.url}" alt="${image.alt}" width = 400>
-    </li>
-  `;
+for (let image of images) {
+  item += `<li><img src="${image.url}" alt="${image.alt}" width = 400></li>`;
 }
-
 galleryEl.insertAdjacentHTML("beforeend", item);
 console.log(galleryEl);
