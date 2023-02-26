@@ -13,7 +13,7 @@ const images = [
   },
 ];
 
-const galleryEl = document.querySelector(".gallery");
+const galleryEl = document.querySelector(".js-gallery");
 let item = "";
 
 for (let i = 0; i < images.length; i++) {
