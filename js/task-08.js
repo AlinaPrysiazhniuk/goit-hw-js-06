@@ -4,7 +4,7 @@ const refs = {
   passwordEl: document.querySelector(".user-password"),
 };
 
-refs.formEl.addEventListener("submit", (event) => {
+refs.formEl.addEventListener("submit", () => {
   event.preventDefault();
 
   if (refs.emailEl.value === "" || refs.passwordEl.value === "") {
@@ -22,27 +22,27 @@ refs.formEl.addEventListener("submit", (event) => {
   }
 });
 
-// const loginFormEl = document.querySelector(".login-form");
-// loginFormEl.addEventListener("submit", handleFormSubmit);
+const loginFormEl = document.querySelector(".login-form");
+loginFormEl.addEventListener("submit", handleFormSubmit);
 
-// function handleFormSubmit(event) {
-//   event.preventDefault();
+function handleFormSubmit(event) {
+  event.preventDefault();
 
-//   const {
-//     elements: { email, password },
-//   } = event.currentTarget;
+  const {
+    elements: { email, password },
+  } = event.currentTarget;
 
-//   console.log(event.currentTarget);
+  console.log(event.currentTarget);
 
-//   if (email.value === "" || password.value === "") {
-//     return alert("Всі поля повинні бути заповнені");
-//   }
+  if (email.value === "" || password.value === "") {
+    return alert("Всі поля повинні бути заповнені");
+  }
 
-//   const formData = {
-//     email: email.value,
-//     password: password.value,
-//   };
+  const formData = {
+    email: email.value,
+    password: password.value,
+  };
 
-//   console.log(formData);
-//   event.currentTarget.reset();
-// }
+  console.log(formData);
+  event.currentTarget.reset();
+}

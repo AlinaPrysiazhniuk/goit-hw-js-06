@@ -8,11 +8,10 @@ const refs = {
 //-----------------створення колекції
 refs.buttonCreate.addEventListener("click", createBoxes);
 
-function createBoxes() {
-  let inputNumber = refs.inputEl.value;
+function createBoxes(amount) {
   const arrayBoxes = [];
 
-  for (let i = 0; i < inputNumber; i++) {
+  for (let i = 0; i < amount; i++) {
     const box = document.createElement("div");
     box.classList.add("boxes");
     box.style.width = `${30 + i * 10}px`;
